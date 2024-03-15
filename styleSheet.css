@@ -1,0 +1,388 @@
+<style>
+
+.accordion-button {
+  width: auto;
+}
+
+.titleBar {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important;
+  padding:5px;
+}
+
+#rosterTable td:hover{
+  overflow: visible !important;
+  white-space: normal !important;
+  min-width:200px;
+  width: auto !important;
+  background-color:#F4F9FF;
+}
+
+#rosterTable button {
+  border-radius: 10px;
+  background-color: #003c71;
+  color: white;
+}
+
+.carousel-item{
+  padding:10px;
+}
+
+.gsaBlue{
+    color:#003c71;
+}
+
+.gsaSecondBlue{
+   color:#99B5CB;
+}
+
+.center{
+    text-align: center;
+}
+
+
+#filter_div{
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.full{
+  width:100%;
+}
+
+.nicEdit-main{
+  width:98% !important;
+  padding:2px;
+  max-height:300px;
+  background-color:white;
+  overflow:auto !important;
+}
+
+#summary_div{
+  /* height:700px; */
+  display: flex;    
+  flex-direction: column;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  gap:1rem;
+  padding-left:15px;
+  width: 70%;
+}
+
+.underline{
+  margin:0;
+}
+
+.btn{
+  --bs-btn-font-size: 10px !important;
+}
+
+.titleLetter{
+  font-family:Shadows Into Light;
+  font-weight:bold;
+  color:#003c71;
+  font-size: calc(2rem + 1.5vw);
+}
+
+.bottom{
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+button{
+  max-height:30px;
+  background-color:#003c71;
+  color:white;
+}
+button:hover{
+  filter: brightness(125%);
+}
+
+button.icon {
+  border-radius:10px;
+}
+
+.cursorPointer{
+  cursor:pointer;
+}
+
+.cursorPointer:hover {
+  background-color: GhostWhite;
+}
+
+.scriptCase{
+  font-weight:bold;
+  color:black;
+  font-family:Lobster;
+  font-size: 20px;
+  font-style: normal;
+}
+
+body{
+    font-family:Roboto !important;
+    padding-top:10px;
+      margin: auto;
+      width: 95%;
+      overflow:auto;
+  }
+
+
+.flex{
+  display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  justify-content: space-between; /* switched from default (flex-start, see below) */
+}
+
+.flexSideBySide {
+  display: flex;                  /* establish flex container */
+  flex-direction: row;  
+}
+
+.flexRight{
+  display: flex;                  /* establish flex container */
+  justify-content: flex-end;
+}
+
+.flexBoxTitle{
+  display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background-color:#003c71;
+  color:white;
+}
+.fa-file-arrow-down:before{
+  font-size:25px;
+}
+
+/* .hrL2 {grid-area: divider2;} */
+
+.grid-container-Page{
+  display: grid;
+  gap: 5px;
+}
+
+.flexColEven{
+  display: flex;    
+  flex-direction: column;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  justify-content: space-between; /* switched from default (flex-start, see below) */
+}
+
+.flexcolStart{
+  display: flex;    
+  flex-direction: column;            /* default value; can be omitted */
+  flex-wrap: nowrap; 
+  grid-template-columns: 40%             /* default value; can be omitted */
+}
+
+.flexRowStart{
+  gap: 5px;
+  display: flex;    
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+}
+
+.hide{
+  display:none;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.r00 {grid-area:r00;}
+.r01 {grid-area:r01;}
+
+.grid-recipient{
+  display: grid;
+  grid-template-areas:
+  'r00 r01';
+  grid-template-columns: 50% 50%;
+  gap: 8px;
+  padding: 2.5px;  
+  width:98%;
+}
+
+.a00 {grid-area:a00;}
+.a01 {grid-area:a01;}
+.a02 {grid-area:a02;}
+.a03 {grid-area:a03;}
+.a04 {grid-area:a04;}
+.a05 {grid-area:a05;}
+.a06 {grid-area:a06;}
+.a07 {grid-area:a07;}
+.a08 {grid-area:a08;}
+.a09 {grid-area:a09;}
+.a10 {grid-area:a10;}
+.a11 {grid-area:a11;}
+.a12 {grid-area:a12;}
+.a13 {grid-area:a13;}
+.a14 {grid-area:a14;}
+
+.grid-addMgmt{
+  display: grid;
+  grid-template-areas:
+  'a00 a02 a03'
+  'a04 a05 a06'
+  'a07 a08 a09'
+  'a10 a11 a12'
+  'a13 a14 a14';
+  grid-template-columns: 33% 33% 33%;
+  gap: 15px;
+  padding: 2.5px;  
+  width:98%;
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-rows: repeat(8, 50px);
+  grid-auto-flow: column;
+}
+
+.summary-list {
+  list-style: none;
+  display: grid;
+  grid-template-rows: repeat(7, 50px);
+  grid-auto-flow: column;
+}
+
+.i00 {grid-area:i00;}
+.i01 {grid-area:i01;}
+
+.grid-info{
+  display: grid;
+  grid-template-areas:
+  'i00 i00' 
+  'i01 i01'; 
+  grid-template-columns: 50% 50%;
+  gap: 15px;
+  padding: 2.5px;  
+  width:98%;
+}
+
+.m00 {grid-area:m00;}
+.m01 {grid-area:m01;}
+.m02 {grid-area:m02;}
+
+
+.grid-mainInfo{
+  display: grid;
+  grid-template-areas:
+  'm00 m01' 
+  'm02 m02'; 
+  grid-template-columns: 50% 50%;
+  gap: 15px;
+  padding: 2.5px;  
+  width:98%;
+}
+
+
+.t00 {grid-area:t00;}
+.t01 {grid-area:t01;}
+.t02 {grid-area:t02;}
+
+.grid-title{
+  display: grid;
+  grid-template-areas:
+  't00 t01'
+  't00 t02';
+  grid-template-columns: 90px auto;
+  gap: 2px;
+  padding: 2.5px;  
+}
+
+#descriptionInput{
+  overflow-y:scroll;
+  width:100%;
+  height:5rem;
+}
+
+// for dropdown to wrap text
+.select2-selection--single {
+  height: 100%;
+}
+.select2-selection__rendered{
+  word-wrap: break-word;
+  text-overflow: inherit;
+  white-space: normal;
+}
+
+.select2-selection--multiple .select2-selection__choice {
+    display: block !important;
+    width: fit-content;
+}
+
+/*DROPDOWN CSS************************************************************************************************/
+
+.dropdown-menu.show {
+    display: block;
+    padding: 5px;
+}
+
+.checkbox-menu li label {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    margin:0;
+    transition: background-color .4s ease;
+}
+.checkbox-menu li input {
+    margin: 0px 5px;
+    top: 2px;
+    position: relative;
+}
+
+.checkbox-menu li.active label {
+    background-color: #cbcbff;
+    font-weight:bold;
+}
+
+.checkbox-menu li label:hover,
+.checkbox-menu li label:focus {
+    background-color: #f5f5f5;
+}
+
+.checkbox-menu li.active label:hover,
+.checkbox-menu li.active label:focus {
+    background-color: #b8b8ff;
+}
+/*******************************************************************************************************************/
+
+.toast-body {
+  word-wrap: break-word;
+  color: red;
+  font-size:16px;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;} 
+  to {top: 60px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 60px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 60px; opacity: 1;} 
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 60px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+
+</style>
